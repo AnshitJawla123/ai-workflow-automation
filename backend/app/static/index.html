@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Workflow Automation</title>
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='52' font-size='52'>⚙️</text></svg>"/>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      brand: { 50:'#eef2ff',100:'#e0e7ff',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',900:'#312e81' },
+    }}}}
+  </script>
+  <!-- React (development build for clearer errors) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- htm = JSX-like syntax without a build step -->
+  <script src="https://unpkg.com/htm@3.1.1/dist/htm.js"></script>
+  <!-- Chart.js for charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <style>
+    html, body { background: #0b1020; color: #e2e8f0; }
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; min-height: 100vh; }
+    .pulse-dot { animation: pulse 1.4s infinite ease-in-out; }
+    @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+    .scrollbar::-webkit-scrollbar { width:8px; height:8px; }
+    .scrollbar::-webkit-scrollbar-thumb { background:#374151; border-radius:4px; }
+    /* Boot loader so user never sees black */
+    #boot { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1rem; background:#0b1020; z-index:1; }
+    #boot .ring { width:48px; height:48px; border:4px solid #4338ca; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body class="dark">
+  <div id="boot">
+    <div class="ring"></div>
+    <div class="text-slate-300 text-sm">Loading AI Workflow Automation…</div>
+    <div id="boot-err" class="text-rose-400 text-xs max-w-lg text-center"></div>
+  </div>
+  <div id="root"></div>
+  <script>
+    // Global error capture (shows in boot screen if React fails to mount)
+    window.addEventListener('error', e => {
+      const el = document.getElementById('boot-err');
+      if (el) el.textContent = 'Boot error: ' + (e.message || e.error || e);
+      console.error('GlobalError', e);
+    });
+    window.addEventListener('unhandledrejection', e => {
+      const el = document.getElementById('boot-err');
+      if (el) el.textContent = 'Async error: ' + (e.reason && e.reason.message || e.reason);
+      console.error('UnhandledRejection', e);
+    });
+  </script>
+  <script src="/static/app.js?v=2"></script>
+</body>
+</html>
