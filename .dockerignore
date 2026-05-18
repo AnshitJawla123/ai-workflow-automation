@@ -1,0 +1,11 @@
+**/.venv
+**/.venv-old
+**/__pycache__
+**/.pytest_cache
+**/node_modules
+**/.next
+**/out
+data/
+*.log
+.git
+.env

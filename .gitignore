@@ -1,0 +1,78 @@
+# ───── Python ─────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+.eggs/
+build/
+dist/
+.Python
+.python-version
+
+# ───── Virtual envs (1.4 GB+ — never commit) ─────
+.venv/
+venv/
+env/
+.venv*/
+backend/.venv/
+
+# ───── Secrets ─────
+.env
+.env.local
+.env.production
+*.pem
+*.key
+
+# ───── Runtime data (DBs, vectors, uploads, exports) ─────
+data/
+!data/.gitkeep
+**/data/
+backend/data/
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# ───── Logs ─────
+*.log
+logs/
+
+# ───── Node (if you ever add frontend build step) ─────
+node_modules/
+.next/
+out/
+.npm/
+.pnpm-store/
+
+# ───── IDE / OS ─────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ───── Tests / coverage ─────
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ───── Docker / Compose runtime ─────
+*.pid
+.docker/
+
+# ───── Local model caches ─────
+~/.cache/
+.cache/
+.chroma/
+
+# ───── Backups ─────
+*.bak
+*.backup
+backup-*.tgz
