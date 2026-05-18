@@ -1,7 +1,7 @@
 # AGENTS.md — AI tools used during development
 
 ## Primary AI agent
-- **Rovo Dev (Atlassian/Anthropic-family)** in interactive mode
+- **Anthropic-family interactive AI** in interactive mode
 
 ## What the AI did
 | Task | Role |

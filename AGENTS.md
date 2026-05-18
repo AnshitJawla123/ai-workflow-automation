@@ -5,7 +5,7 @@ A complete record of AI assistance used in the development of this project — a
 > A more detailed breakdown lives in [`docs/AI_WORKFLOW.md`](docs/AI_WORKFLOW.md) and [`docs/AI_TOOLS_AND_FRAMEWORKS.md`](docs/AI_TOOLS_AND_FRAMEWORKS.md).
 
 ## Primary agent
-**Rovo Dev** (Atlassian) — interactive Anthropic-backbone coding assistant.
+**Anthropic-backbone coding assistant** — interactive AI-driven development.
 
 ## What it did
 - Multi-revision **planning** (3 plan iterations refined by user feedback on tech, infra constraints, sizing)

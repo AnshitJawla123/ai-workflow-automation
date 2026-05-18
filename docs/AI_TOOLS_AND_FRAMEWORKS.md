@@ -8,10 +8,10 @@ Complete catalog of every AI tool, model, library, and external service used in 
 
 | Tool | Role | Where it appears |
 |---|---|---|
-| **Rovo Dev** (Atlassian, Anthropic-family backbone) | Primary coding agent — planned architecture, wrote every file, ran live shell tests, fixed bugs in real-time | Whole codebase |
-| **Anthropic Claude** (via Rovo Dev) | Reasoning, code generation, prompt design | All code + 10 versioned prompt templates |
+| **Interactive AI Agent** (Anthropic-family backbone) | Primary coding agent — planned architecture, wrote every file, ran live shell tests, fixed bugs in real-time | Whole codebase |
+| **Anthropic Claude** | Reasoning, code generation, prompt design | All code + 10 versioned prompt templates |
 
-> No GitHub Copilot, Cursor, Codex, Replit, ChatGPT-Plus, or other secondary agents were used in this build. Every line was produced through the Rovo Dev interactive loop.
+> No GitHub Copilot, Cursor, Codex, Replit, ChatGPT-Plus, or other secondary agents were used in this build. Every line was produced through the interactive loop.
 
 ---
 

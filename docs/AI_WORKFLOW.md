@@ -3,7 +3,7 @@
 > Required reading — this assignment explicitly evaluates AI-assisted engineering capability.
 
 ## TL;DR
-This project was built in <48 hours using **Rovo Dev (Claude Sonnet 4.5 agentic coder)** as the primary author, with the human developer acting as architect, reviewer, and product owner. **Every line was AI-drafted, human-reviewed.**
+This project was built in <48 hours using **Claude Sonnet 4.5 agentic coder** as the primary author, with the human developer acting as architect, reviewer, and product owner. **Every line was AI-drafted, human-reviewed.**
 
 ---
 
@@ -11,7 +11,7 @@ This project was built in <48 hours using **Rovo Dev (Claude Sonnet 4.5 agentic 
 
 | Tool | Role | Usage |
 |---|---|---|
-| **Rovo Dev / Claude Sonnet 4.5** | Primary code generator | Wrote ~95% of backend + frontend + docs |
+| **Claude Sonnet 4.5** | Primary code generator | Wrote ~95% of backend + frontend + docs |
 | **Gemini 2.5 / Llama-4 Scout / OpenRouter free** | Runtime AI inside the product | Vision-LLM consensus for extraction |
 | **Tesseract** | OCR fallback | Runs in the container |
 | **Cursor / VS Code** | Editor surface | For human review only |
