@@ -1,5 +1,7 @@
 # 🚀 Deployment
 
+## 🚀 **LIVE DEPLOYMENT: [http://44.207.148.185/](http://44.207.148.185/)** 🚀
+
 ## Sizing recommendation
 
 | Plan | vCPU | RAM | Disk | Concurrent users | Notes |

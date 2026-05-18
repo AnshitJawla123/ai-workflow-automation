@@ -1,5 +1,7 @@
 # AGENTS.md
 
+## 🚀 **LIVE DEPLOYMENT: [http://44.207.148.185/](http://44.207.148.185/)** 🚀
+
 A complete record of AI assistance used in the development of this project — as required by the assignment brief.
 
 > A more detailed breakdown lives in [`docs/AI_WORKFLOW.md`](docs/AI_WORKFLOW.md) and [`docs/AI_TOOLS_AND_FRAMEWORKS.md`](docs/AI_TOOLS_AND_FRAMEWORKS.md).

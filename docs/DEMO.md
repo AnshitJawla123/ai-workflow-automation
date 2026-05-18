@@ -1,5 +1,7 @@
 # Demo Script
 
+## 🚀 **LIVE DEPLOYMENT: [http://44.207.148.185/](http://44.207.148.185/)** 🚀
+
 ## 30-second smoke test (no keys needed)
 1. `make install && make backend` (or `docker compose up -d`)
 2. Open http://localhost:8000

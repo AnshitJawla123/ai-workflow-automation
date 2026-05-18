@@ -1,5 +1,7 @@
 # 🏭 AI Workflow Automation
 
+## 🚀 **LIVE DEPLOYMENT: [http://44.207.148.185/](http://44.207.148.185/)** 🚀
+
 Production-ready prototype that digitizes **handwritten manufacturing/operational documents** into structured, reviewable records with analytics, validation workflows, and multi-tenant isolation.
 
 > Built in <48 h for a real B2B manufacturing use case. Zero cloud-vendor lock-in. Runs on a single 2-vCPU box. Ships with **multi-model AI consensus** for handwriting accuracy.

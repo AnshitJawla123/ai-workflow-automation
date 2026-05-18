@@ -1,5 +1,7 @@
 # AGENTS.md — AI tools used during development
 
+## 🚀 **LIVE DEPLOYMENT: [http://44.207.148.185/](http://44.207.148.185/)** 🚀
+
 ## Primary AI agent
 - **Anthropic-family interactive AI** in interactive mode
 
