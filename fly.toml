@@ -1,0 +1,50 @@
+# Fly.io deployment
+# Usage:
+#   fly launch --no-deploy --copy-config
+#   fly volumes create app_data --size 1
+#   fly secrets set GEMINI_API_KEY=... GROQ_API_KEY=... OPENROUTER_API_KEY=... APP_SECRET_KEY=$(openssl rand -hex 32)
+#   fly deploy
+app = "ai-workflow-automation"
+primary_region = "iad"
+
+[build]
+
+[env]
+  APP_ENV = "production"
+  APP_HOST = "0.0.0.0"
+  APP_PORT = "8000"
+  DATABASE_URL = "sqlite:////app/data/app.db"
+  DATA_DIR = "/app/data"
+  UPLOAD_DIR = "/app/data/uploads"
+  EXPORT_DIR = "/app/data/exports"
+  CHROMA_DIR = "/app/data/chroma"
+  GRAPH_DIR = "/app/data/graph"
+  WORKSPACE_DOC_LIMIT = "50"
+  WORKSPACE_STORAGE_BYTES = "52428800"
+  WORKSPACE_COOKIE_DAYS = "90"
+  ALLOW_ANONYMOUS = "true"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/api/v1/health"
+
+[mounts]
+  source = "app_data"
+  destination = "/app/data"
+
+# Recommended: 2 vCPU / 2 GB for vision consensus (3 parallel providers)
+# Free-tier 1 vCPU / 256 MB works but only with 1 vision provider
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 2
+  memory_mb = 2048

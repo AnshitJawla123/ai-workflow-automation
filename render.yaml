@@ -1,0 +1,42 @@
+# Render.com one-click deploy
+# Repo root must contain this file. Render auto-detects the Dockerfile.
+# Recommended: Render "Standard" plan (2 GB) for vision consensus; "Free" (512 MB) works for OCR fallback only.
+services:
+  - type: web
+    name: ai-workflow-automation
+    runtime: docker
+    plan: starter     # 512MB free; bump to "standard" for vision consensus
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_SECRET_KEY
+        generateValue: true
+      - key: BOOTSTRAP_ADMIN_EMAIL
+        value: admin@local.dev
+      - key: BOOTSTRAP_ADMIN_PASSWORD
+        generateValue: true
+      # ===== Free LLM providers — at least ONE required for accuracy =====
+      - key: GEMINI_API_KEY                  # https://aistudio.google.com/apikey
+        sync: false
+      - key: GROQ_API_KEY                    # https://console.groq.com
+        sync: false
+      - key: OPENROUTER_API_KEY              # https://openrouter.ai
+        sync: false
+      - key: HF_API_TOKEN                    # https://huggingface.co/settings/tokens
+        sync: false
+      # ===== Tenant / safety knobs =====
+      - key: WORKSPACE_DOC_LIMIT
+        value: "50"
+      - key: WORKSPACE_STORAGE_BYTES
+        value: "52428800"  # 50 MB
+      - key: WORKSPACE_COOKIE_DAYS
+        value: "90"
+      - key: ALLOW_ANONYMOUS
+        value: "true"
+    disk:
+      name: app-data
+      mountPath: /app/data
+      sizeGB: 1
